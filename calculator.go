@@ -181,7 +181,7 @@ func Calc(expression string) (float64, error) {
 }
 
 func main() {
-	expression := "2 + 3 * (3.5 - 5 / 20) + 1"
+	expression := "2 + 3 * (3.5 - 5 / 20)"
 	result, err := Calc(expression)
 	if err != nil {
 		fmt.Println("Error:", err)
