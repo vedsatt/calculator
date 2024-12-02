@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bufio"
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 )
 
@@ -250,12 +252,19 @@ func Calc(expression string) (float64, error) {
 }
 
 func main() {
-	expression := "3/0"
+	fmt.Print("Enter the expression: ")
+	var (
+		expression string
+	)
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	expression = scanner.Text()
+
 	result, err := Calc(expression)
 	if err != nil {
 		fmt.Println("Error:", err)
 	} else {
-		fmt.Println(result)
+		fmt.Println("Result:", result)
 	}
 
 }
